@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2026 at 06:45 AM
+-- Generation Time: Oct 09, 2026 at 07:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `address` (
 --
 
 CREATE TABLE `admins` (
-  `admin_id` int(4) NOT NULL,
+  `admin_id` smallint(2) NOT NULL,
   `user_id` int(5) NOT NULL,
   `admin_level` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -360,7 +360,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` smallint(2) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `booking`
