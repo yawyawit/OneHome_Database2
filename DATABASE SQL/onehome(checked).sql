@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2026 at 06:27 AM
+-- Generation Time: Oct 09, 2026 at 06:45 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -274,7 +274,8 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `dispute`
   ADD PRIMARY KEY (`dispute_id`),
-  ADD KEY `booking_id` (`booking_id`,`user_id`);
+  ADD KEY `booking_id` (`booking_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `payment`
@@ -454,7 +455,8 @@ ALTER TABLE `customers`
 -- Constraints for table `dispute`
 --
 ALTER TABLE `dispute`
-  ADD CONSTRAINT `dispute_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`booking_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `dispute_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`booking_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `dispute_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `payment`
