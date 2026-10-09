@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2026 at 07:17 AM
+-- Generation Time: Oct 09, 2026 at 07:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -252,6 +252,7 @@ ALTER TABLE `address`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
   ADD KEY `fk_admin_user` (`user_id`);
 
 --
@@ -267,6 +268,7 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
   ADD KEY `fk_customer_user` (`user_id`);
 
 --
@@ -297,6 +299,7 @@ ALTER TABLE `payout`
 --
 ALTER TABLE `providers`
   ADD PRIMARY KEY (`provider_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
   ADD KEY `fk_provider_user` (`user_id`);
 
 --
