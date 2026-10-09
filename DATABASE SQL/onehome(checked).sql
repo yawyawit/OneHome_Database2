@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2026 at 07:22 AM
+-- Generation Time: Oct 09, 2026 at 07:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -260,6 +260,7 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
+  ADD UNIQUE KEY `request_id` (`request_id`,`quote_id`),
   ADD KEY `fk_booking_request` (`request_id`),
   ADD KEY `fk_booking_quote` (`quote_id`);
 
@@ -316,6 +317,7 @@ ALTER TABLE `quote`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`review_id`),
+  ADD UNIQUE KEY `booking_id` (`booking_id`),
   ADD KEY `fk_review_booking` (`booking_id`),
   ADD KEY `fk_review_customer` (`customer_id`);
 
@@ -323,7 +325,8 @@ ALTER TABLE `review`
 -- Indexes for table `service_category`
 --
 ALTER TABLE `service_category`
-  ADD PRIMARY KEY (`category_id`);
+  ADD PRIMARY KEY (`category_id`),
+  ADD UNIQUE KEY `category_name` (`category_name`);
 
 --
 -- Indexes for table `service_offering`
