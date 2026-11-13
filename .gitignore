@@ -1,0 +1,8 @@
+# user uploads (keep the folder)
+uploads/*
+!uploads/.gitkeep
+images/profiles/*
+!images/profiles/.gitkeep
+.DS_Store
+Thumbs.db
+.vscode/
