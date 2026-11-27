@@ -1,0 +1,3 @@
+*The "OneHome"
+
+"OneHome is a web-based platform that helps homeowners and customers find and request home services in one place. It aims to make it easier for customers to find service providers for their household needs without having to search in different places."
